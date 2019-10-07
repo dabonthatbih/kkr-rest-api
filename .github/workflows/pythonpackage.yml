@@ -20,7 +20,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install django --upgrade pip
-        pip install -r requirements.txt
+    - name: django
+      run: |
+        pip install django
+        pip install djangorestframework
+        pip install django-countries
+  
     - name: Lint with flake8
       run: |
         pip install flake8
@@ -32,8 +37,3 @@ jobs:
       run: |
         pip install pytest
         pytest
-    - name: django
-      run: |
-        pip install django
-        pip install djangorestframework
-        pip install django-countries
